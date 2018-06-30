@@ -1,7 +1,9 @@
-require './lib/game'  #will look for and test the source file in   
-                           #the lib folder, called fizz_buzz.rb
+require './lib/game' 
+
+game = Game.new
+
 describe 'game' do
-	it 'returns 1 if number is 1' do
-    expect(game.roll()).to eq 1 
+	it 'returns 0 if all gutter balls' do
+		expect(game.score()).to eq 0
 	end
 end
