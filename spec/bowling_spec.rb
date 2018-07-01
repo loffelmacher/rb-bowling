@@ -11,6 +11,10 @@ module Helpers
 		game.roll(5)
 		game.roll(5)
 	end
+
+	def rollStrike(game)
+		game.roll(10)
+	end
 end
 
 RSpec.configure do |c|
@@ -38,5 +42,13 @@ describe Game do
 		rollMany(@game, 17, 0)
 		expect(@game.score()).to eq 16
 	end
+
+	it 'scores 24 if one strike' do 
+		rollStrike(@game)
+		@game.roll(3)
+		@game.roll(4)
+		rollMany(@game, 16, 0)
+		expect(@game.score()).to eq 24
+	end	
 end
 
