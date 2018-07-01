@@ -50,5 +50,11 @@ describe Game do
 		rollMany(@game, 16, 0)
 		expect(@game.score()).to eq 24
 	end	
+
+	it 'scores 300 if perfect game' do 
+		rollMany(@game, 12, 10)
+		expect(@game.score()).to eq 300
+	end	
+
 end
 
