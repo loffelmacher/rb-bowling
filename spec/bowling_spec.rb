@@ -24,5 +24,12 @@ describe 'a game of bowling' do
 		rollMany(game, 20, 1)
 		expect(game.score()).to eq 20
 	end
+
+	it 'scores 16 if one spare' do 
+		game.roll(5)
+		game.roll(5)
+		game.roll(3)
+		expect(game.score()).to eq 16
+	end
 end
 
