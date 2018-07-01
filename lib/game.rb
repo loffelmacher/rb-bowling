@@ -9,5 +9,9 @@ class Game
 
 	def score()
 		score = 0
+		@rolls.each do |roll|
+			score = score + roll
+		end
+		score
   end
 end
